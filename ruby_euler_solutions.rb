@@ -342,4 +342,6 @@ problem_10
 problem_11
 problem_12
 problem_13
+problem_14
+problem_15
 problem_16
