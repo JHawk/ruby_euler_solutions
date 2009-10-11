@@ -102,7 +102,7 @@ def problem_7(nth = 6,i = 13)
     i += 2
     nth += 1 if is_prime?(i)
   end
-  puts "problem_7 => #{i} = prime && nth => #{nth}"
+  puts "problem_7 => #{i}"
 end
 
 def problem_8(start = 99999,p = 1)
