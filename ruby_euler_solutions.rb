@@ -1,5 +1,9 @@
 #!/usr/bin/ruby
 
+###########################################################
+# The following are solutions to the problem set found at
+# http://projecteuler.net/
+
 ########################## DATA
 
 @data_3 = 600851475143
