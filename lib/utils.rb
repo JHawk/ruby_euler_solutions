@@ -16,4 +16,13 @@ module Utils
     end
     factors
   end
+  
+  def quad(a,b,c)
+    inside = b**2 - (4 * a * c)
+    negb = b * -1
+    twoa = 2 *a
+    ans1 = negb + Math.sqrt(inside) 
+    ans2 = negb - Math.sqrt(inside) 
+    return (ans1 / twoa), (ans2 / twoa)
+  end
 end
