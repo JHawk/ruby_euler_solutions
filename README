@@ -1,0 +1,5 @@
+The following are solutions to the problem set found at http://projecteuler.net/
+IN RUBY!!!!!!!!
+
+To run all the problems that I have completed -> ruby euler_solutions.rb
+To run specific problems -> ruby euler_solutions.rb 1 2 3 4
