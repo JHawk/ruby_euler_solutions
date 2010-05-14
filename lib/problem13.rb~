@@ -1,0 +1,13 @@
+def problem_13
+  nums = []
+  sum = 0
+ 
+  while !(@data_13.nil? || @data_13.empty?)
+    nums << @data_13.slice!(0..49)
+  end
+
+  nums.each do |n|
+    sum += n.to_i
+  end
+  puts "problem_13 => #{sum.to_s[0..9]}"
+end
