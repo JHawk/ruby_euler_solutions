@@ -1,9 +1,0 @@
-def problem_8(start = 99999,p = 1)
-  while start > 0
-    if @data_8.include?(start.to_s) && !start.to_s.include?("0")
-      start.to_s.each_char {|i| p *= i.to_i}
-      return puts "problem_8 => #{p}"
-    end
-    start -= 1
-  end
-end
