@@ -1,3 +1,4 @@
+# Calculate the sum of all the primes below two million.
 def problem_10(max = 2000000)
   nums = Hash.new(true)
   sum = 0
