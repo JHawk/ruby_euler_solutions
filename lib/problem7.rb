@@ -1,3 +1,5 @@
+# Find the 10001st prime.
+
 # TODO speed this up
 def problem_7(nth = 6,i = 13)
   while nth < 10001

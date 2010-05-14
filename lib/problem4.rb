@@ -1,3 +1,4 @@
+# Find the largest palindrome made from the product of two 3-digit numbers.
 def problem_4(start = 999)
   while start > 0
     i = start - 1

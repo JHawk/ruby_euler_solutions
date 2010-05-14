@@ -1,3 +1,4 @@
+# Discover the largest product of five consecutive digits in the 1000-digit number.
 def problem_8(start = 99999,p = 1)
   while start > 0
     if @data_8.include?(start.to_s) && !start.to_s.include?("0")

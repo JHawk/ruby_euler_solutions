@@ -1,3 +1,4 @@
+# What is the greatest product of four numbers on the same straight line in the 20 by 20 grid?
 def problem_11(min = 90)
   big_prod = 0
   dirs = [[0,1],[1,0],[1,1],[0,-1],[-1,0],[-1,-1],[-1,1],[1,-1]]

@@ -1,3 +1,4 @@
+# Find the largest prime factor of a composite number.
 def problem_3
   while @data_3 > 70
     for i in (2..1000000)

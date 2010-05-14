@@ -1,3 +1,5 @@
+# Find the only Pythagorean triplet, {a, b, c}, for which a + b + c = 1000.
+
 # TODO speed this up
 def problem_9
   a = 100

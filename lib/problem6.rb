@@ -1,3 +1,4 @@
+# What is the difference between the sum of the squares and the square of the sums?
 def problem_6(last = 100)
   sum = 0
   sum_sq = 0
