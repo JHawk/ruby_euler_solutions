@@ -4,6 +4,8 @@ require File.dirname(__FILE__) + '/utils.rb'
 
 class Problem07 < Problem 
   include Utils
+  
+  def initialize; super end
     
   # TODO speed this up
   def problem(nth = 6,i = 13)

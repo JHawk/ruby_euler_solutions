@@ -3,6 +3,7 @@ require File.dirname(__FILE__) + '/problem.rb'
 class Problem03 < Problem  
   def initialize
     @data_3 = 600851475143
+    super
   end
 
   def problem

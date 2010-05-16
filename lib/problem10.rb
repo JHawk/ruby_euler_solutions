@@ -1,6 +1,7 @@
 require File.dirname(__FILE__) + '/problem.rb'
 # Calculate the sum of all the primes below two million.
 class Problem10 < Problem 
+  def initialize; super end
 
   def problem(max = 2000000)
     nums = Hash.new(true)

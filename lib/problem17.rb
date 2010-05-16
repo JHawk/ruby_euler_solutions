@@ -1,6 +1,8 @@
 require File.dirname(__FILE__) + '/problem.rb'
 # How many letters would be needed to write all the numbers in words from 1 to 1000?
 class Problem17 < Problem
+  def initialize; super end
+
   def problem
 =begin
     numbers_letter_count_h = {

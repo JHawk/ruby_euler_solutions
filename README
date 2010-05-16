@@ -1,5 +1,10 @@
 The following are solutions to the problem set found at http://projecteuler.net/
 IN RUBY!!!!!!!!
 
-To run all the problems that I have completed -> ruby euler_solutions.rb
-To run specific problems -> ruby euler_solutions.rb 1 2 3 4
+To run all the problems that I have completed 
+-> ruby euler_solutions.rb
+To run specific problems 
+-> ruby euler_solutions.rb 1 2 3 4
+To run all problems concurrently (slightly faster) 
+Note: run times are less accurate due to scheduling of threads
+-> ruby euler_solutions.rb -threaded

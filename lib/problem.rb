@@ -1,12 +1,14 @@
 class Problem
   @@problems = [] 
   
+  attr_reader :start
+  
+  def initialize
+    @start = Time.now 
+  end
+  
   def answer
-    start = Time.now
-    c = self.class.to_s.ljust(11) 
-    a = "answer => #{problem.to_s}"
-    rt = "runtime => #{Time.now - start}s ".ljust(22)
-    "#{c}: #{rt}: #{a}"
+    "#{self.class.to_s.ljust(11)}: answer => #{problem.to_s.ljust(15)}: runtime => #{Time.now - self.start}s"
   end
   
   def self.problems; @@problems end
