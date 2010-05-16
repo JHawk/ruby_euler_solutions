@@ -2,7 +2,7 @@
 Dir[File.dirname(__FILE__) + '/lib/problem*.rb'].each {|file| require file}
 
 if ARGV.empty? 
-  Problem.problems.each {|klass| klass.new.answer}
+  Problem.problems.map {|klass| klass.new.answer}.sort.each {|a| puts a}
 else
   ARGV.each {|nums| puts "not implemented yet"}
 end

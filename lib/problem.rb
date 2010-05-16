@@ -1,9 +1,11 @@
 class Problem
   @@problems = [] 
   
-  def answer() puts "#{self.class} => #{problem}" end
+  def answer() "#{self.class} => #{problem}" end
   
   def self.problems; @@problems end
+  
+  def <=>(o) self.class <=> o.class end
   
   private
   
