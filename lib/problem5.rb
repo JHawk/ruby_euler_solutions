@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/problem.rb'
 require File.dirname(__FILE__) + '/utils.rb'
 # What is the smallest number divisible by each of the numbers 1 to 20?
-class Problem5 < Problem 
+class Problem05 < Problem 
   include Utils
   def problem(n=20)
     factor_h = {} # prime => max number of occurrences 

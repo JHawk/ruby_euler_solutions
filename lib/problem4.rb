@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/problem.rb'
 # Find the largest palindrome made from the product of two 3-digit numbers.
-class Problem4 < Problem
+class Problem04 < Problem
   def problem(start = 999)
     while start > 0
       i = start - 1

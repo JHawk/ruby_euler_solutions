@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/problem.rb'
 # Find the largest prime factor of a composite number.
-class Problem3 < Problem  
+class Problem03 < Problem  
   def initialize
     @data_3 = 600851475143
   end

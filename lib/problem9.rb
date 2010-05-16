@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/problem.rb'
 # Find the only Pythagorean triplet, {a, b, c}, for which a + b + c = 1000.
-class Problem9 < Problem 
+class Problem09 < Problem 
 
   # TODO speed this up
   def problem

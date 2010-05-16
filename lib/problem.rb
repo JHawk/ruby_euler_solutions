@@ -1,7 +1,13 @@
 class Problem
   @@problems = [] 
   
-  def answer() "#{self.class} => #{problem}" end
+  def answer
+    start = Time.now
+    c = self.class.to_s.ljust(11) 
+    a = "answer => #{problem.to_s}"
+    rt = "runtime => #{Time.now - start}s ".ljust(22)
+    "#{c}: #{rt}: #{a}"
+  end
   
   def self.problems; @@problems end
   

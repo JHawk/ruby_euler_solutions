@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/problem.rb'
 require File.dirname(__FILE__) + '/utils.rb'
 # Find the 10001st prime.
 
-class Problem7 < Problem 
+class Problem07 < Problem 
   include Utils
     
   # TODO speed this up
