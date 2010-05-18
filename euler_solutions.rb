@@ -9,5 +9,11 @@ elsif ARGV.include? "-threaded"
   end
   threads.map {|t| t.value}.sort.each {|a| puts a}
 else
-  ARGV.each {|nums| puts "not implemented yet"}
+  Problem.problems.each do |k|
+    p = k.to_s  
+    index = p =~ /\d/
+    if ARGV.include? p[index..p.size]
+      puts k.new.answer
+    end
+  end
 end
