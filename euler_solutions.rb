@@ -9,11 +9,18 @@ elsif ARGV.include? "-threaded"
   end
   threads.map {|t| t.value}.sort.each {|a| puts a}
 else
+  args = ARGV
+  ARGV.each {|a| args << "0#{a}" if a.size < 2}
+  answers = []
   Problem.problems.each do |k|
     p = k.to_s  
     index = p =~ /\d/
-    if ARGV.include? p[index..p.size]
-      puts k.new.answer
-    end
+    num = p[index..p.size]
+    answers << k.new.answer if ARGV.include? num
+  end
+  unless answers.empty?
+    answers.sort.each {|a| puts a}
+  else
+    puts "Sorry. No problems seem to match any of these numbers -> #{ARGV.join(", ")}."
   end
 end
