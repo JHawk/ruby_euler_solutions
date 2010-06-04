@@ -5,6 +5,6 @@ To run all the problems that I have completed
 -> ruby euler_solutions.rb
 To run specific problems 
 -> ruby euler_solutions.rb 1 2 3 4
-To run all problems concurrently (slightly faster) 
+To run all problems concurrently (for whatever reason) 
 Note: run times are less accurate due to scheduling of threads
 -> ruby euler_solutions.rb -threaded
