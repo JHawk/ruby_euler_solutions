@@ -7,24 +7,20 @@ module Utils
     return true
   end
 
-  def euler_sieve(n)
-    return [] if n < 2
+  def euler_sieve(max)
+    return [] if max < 2
     nums = Hash.new(true)
-    (2..Math::sqrt(n).ceil).each do |r|
-      if nums[r]
-        p = r
-        h = (n / r) + 1
-        while p < h  
-          nums[r * p] = false
-          p += 1
+    (2..Math::sqrt(max).ceil).each do |i|
+      if nums[i]
+        prime = i
+        upto = (max / i) + 1
+        while i < upto
+          nums[i * prime] = false
+          i += 1
         end
-      end 
-    end    
-    primes = []
-    (2..n).each do |x|
-      primes << x if nums[x]
+      end
     end
-    primes
+    (2..max).inject([]) {|primes,x| nums[x] ? primes << x : primes}
   end
 
   def eratosthenes_sieve(n)
@@ -51,23 +47,6 @@ module Utils
     primes
   end
 
-  # TODO - speed up - very slow
-  def trial_prime_factors(n)
-    factors = []
-    (2..n/2).each do |i|
-      while n % i == 0 
-        factors << i 
-        n /= i
-      end
-    end
-    factors
-  end
-  
-  def divisors_count(n)
-    pf = trial_prime_factors(n)
-    pf.uniq.inject(1) {|prod,uf| (pf.count(uf) + 1) * prod}
-  end
-  
   def quad(a,b,c)
     inside = b**2 - (4 * a * c)
     negb = b * -1
