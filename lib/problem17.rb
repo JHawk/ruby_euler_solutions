@@ -1,11 +1,11 @@
 require File.dirname(__FILE__) + '/problem.rb'
 # How many letters would be needed to write all the numbers in words from 1 to 1000?
 class Problem17 < Problem
-  def initialize; super end
-
-  def problem
-=begin
-    numbers_letter_count_h = {
+  
+  attr_accessor :counts 
+  
+  def initialize()
+    @counts = {
       0 => 0, 
       1 => 3,    # one
       2 => 3,    # two
@@ -37,22 +37,25 @@ class Problem17 < Problem
       80 => 6,   # eighty
       90 => 6,   # ninety
       100 => 7,  # hundred 
-      1000 => 8, # thousand
+      1000 => 11,# one thousand
       "and" => 3 # dumb!!!!!
     }
-    sum = 0
-    def accum(n)
-      numbers_letter_count_h[n] ||
-      
-      
-      div = 10**(n.to_s.size - 1) 
-        numbers_letter_count_h[n] = 
+    super 
+  end
+
+  def translate(n)
+    return @counts[n] if @counts[n]
+    if n >= 100
+      hundreds = (n/100) * 100 
+      @counts[n] = @counts[hundreds/100] + @counts[100] + @counts["and"] + translate(n-hundreds)
+    else
+      tens = (n/10) * 10
+      @counts[n] = @counts[tens] + @counts[n-tens]
     end
+  end
 
-    (1..1000).each do |n|
-
-
-    end
-=end    
+  # TODO figure out what tiny edge case is making this wrong
+  def problem(data=1000)
+    (1.upto(data)).inject(0) {|sum,n| sum + translate(n)}
   end
 end
