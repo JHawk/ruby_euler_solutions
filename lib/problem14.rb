@@ -27,7 +27,7 @@ class Problem14 < Problem
     while n < top 
       n += 1
       steps = get_steps(n)
-      if most_steps < get_steps(n)
+      if most_steps < steps
         longest_seq = n 
         most_steps = steps
       end
