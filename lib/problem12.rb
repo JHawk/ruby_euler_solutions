@@ -29,6 +29,7 @@ class Problem12 < Problem
     pf_hash.values.inject {|prod,divisor| prod * (divisor + 1)} || 0
   end
   
+  # TODO introduced a bug into this code somewhere
   def problem(factor_min=500)
     i = 2
     pf = {}
