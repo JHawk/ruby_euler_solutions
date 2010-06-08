@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/utils.rb'
 class Problem12 < Problem 
   include Utils
 
-  attr_accessor :pfs, :primes
+  attr_accessor :pfs
 
   def initialize
     @pfs = {}
@@ -16,7 +16,7 @@ class Problem12 < Problem
   
   def prime_factors(n)
     return @pfs[n] if @pfs[n]
-    @primes = euler_sieve n if n/2.ceil > @primes.last
+    @primes = euler_sieve Math::sqrt(n) if n/2.ceil > @primes.last
     @primes.each do |prime|
       if n % prime == 0 
         return @pfs[n] = prime_factors(n / prime).merge({prime => 1}) {|k,o,n| k == 1 ? 1 : o+n}
@@ -25,16 +25,18 @@ class Problem12 < Problem
     return @pfs[n] = {n => 1}
   end
   
-  def divisors_count(n)
-    prime_factors(n).values.inject {|prod,divisor| prod * (divisor + 1)}
+  def divisors_count(pf_hash)
+    pf_hash.values.inject {|prod,divisor| prod * (divisor + 1)} || 0
   end
   
   def problem(factor_min=500)
-    i = 1
-    tri_n = 1
-    while divisors_count(tri_n) <= factor_min
-      tri_n = triangle_num(i += 1)
+    i = 2
+    pf = {}
+    while divisors_count(pf) <= factor_min 
+      i += 1
+      pf = prime_factors(i).merge(prime_factors(i + 1)) {|k,o,n| k == 1 ? 1 : o+n}
+      pf[2] -= 1 if pf[2]
     end
-    tri_n
+    triangle_num(i)
   end
 end
