@@ -1,5 +1,6 @@
 # TODO make thread safe 
 module Utils
+  
   def is_prime?(n)
     2.upto(Math.sqrt(n)) do |i|
       return false if n % i == 0
@@ -54,5 +55,16 @@ module Utils
     ans1 = negb + Math.sqrt(inside) 
     ans2 = negb - Math.sqrt(inside) 
     return (ans1 / twoa), (ans2 / twoa)
+  end
+  
+  # brute force - probably a better way 
+  def self.proper_divisors(n)
+    (1..(n/2).ceil).inject([]) {|a,i| n % i == 0 ? a << i : a}
+  end
+  
+  def ppp(s)
+    puts "*"*50
+    puts s
+    puts "*"*50
   end
 end
