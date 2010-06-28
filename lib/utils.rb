@@ -56,6 +56,40 @@ module Utils
     ans2 = negb - Math.sqrt(inside) 
     return (ans1 / twoa), (ans2 / twoa)
   end
+
+=begin TODO some day care enough to fix this attempt at a non brute force algo 
+  @@divisors_hash = {}
+
+  def proper_divisors(n)
+    def add_power(set,i,max,p=1)
+      if set.include? i
+        sq = i**p
+        add_power(set,sq,max,p+1) if sq < max && max % sq == 0
+      else 
+        set << i
+      end 
+      set     
+    end 
+    
+    def inner(v,max)
+      
+      ppp v
+    
+      return @@divisors_hash[v] if @@divisors_hash[v]
+      set = [1]
+      (2..(v/2).ceil).each do |i|
+        if v % i == 0 
+          set = inner(v/i,max)
+          set = add_power(set,i,max)
+          set = add_power(set,v/i,max)
+        end
+      end
+      set
+    end
+    
+    @@divisors_hash[n] ? @@divisors_hash[n] : (@@divisors_hash[n] = inner(n,n))
+  end
+=end
   
   # brute force - probably a better way 
   def self.proper_divisors(n)
@@ -65,8 +99,12 @@ module Utils
   @@sum_proper_divisors = {}
     
   def self.sum_proper_divisors(n)
-    @@sum_proper_divisors[n] ||= self.proper_divisors(n).inject(:+)
+    @@sum_proper_divisors[n] ||= self.proper_divisors(n).inject(:+) || 0 
   end
+  
+  def self.abundant?(n) self.sum_proper_divisors(n) > n end
+ 
+  def self.abundants(n) (12..n).select {|i| self.abundant? i} end
   
   def ppp(s)
     puts "*"*50
