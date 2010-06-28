@@ -3,19 +3,12 @@ require File.dirname(__FILE__) + '/utils.rb'
 
 # Evaluate the sum of all amicable pairs under 10000.
 class Problem21 < Problem
-  def initialize
-    @sum_proper_divisors = {}
-    super 
-  end
-  
-  def sum_proper_divisors(n)
-    @sum_proper_divisors[n] ||= Utils::proper_divisors(n).inject(:+)
-  end
-  
+  def initialize ; super end
+
   # returns the amicable pair of the number or nil 
   def amicable_other n
-    ap = sum_proper_divisors(n)
-    ap if ap != n && n == sum_proper_divisors(ap)
+    ap = Utils::sum_proper_divisors n 
+    ap if ap != n && n == Utils::sum_proper_divisors(ap)
   end
   
   def problem(n=10000)

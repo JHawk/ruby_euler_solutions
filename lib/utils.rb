@@ -61,6 +61,12 @@ module Utils
   def self.proper_divisors(n)
     (1..(n/2).ceil).inject([]) {|a,i| n % i == 0 ? a << i : a}
   end
+    
+  @@sum_proper_divisors = {}
+    
+  def self.sum_proper_divisors(n)
+    @@sum_proper_divisors[n] ||= Utils::proper_divisors(n).inject(:+)
+  end
   
   def ppp(s)
     puts "*"*50
