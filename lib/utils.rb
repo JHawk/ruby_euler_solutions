@@ -65,7 +65,7 @@ module Utils
   @@sum_proper_divisors = {}
     
   def self.sum_proper_divisors(n)
-    @@sum_proper_divisors[n] ||= Utils::proper_divisors(n).inject(:+)
+    @@sum_proper_divisors[n] ||= self.proper_divisors(n).inject(:+)
   end
   
   def ppp(s)
