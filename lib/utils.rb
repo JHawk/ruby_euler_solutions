@@ -1,6 +1,11 @@
 # TODO make thread safe 
 module Utils
   
+  def self.pandigital?(n,digits=9)
+    num_s = n.to_s
+    num_s.size == digits && (1..digits).all? {|d| num_s.count(d.to_s) == 1}
+  end
+  
   def euler_sieve(max)
     return [] if max < 2
     nums = Hash.new(true)
