@@ -9,6 +9,21 @@ class Problem79 < Problem
   end
 
   def problem(data=@data)
-    data.each {|a| puts a}
+  puts data
+  
+    t = {}
+    data.map.each do |c| 
+      tmp = {c[1] => [[c[0]],[c[2]]]}
+      t.merge!(tmp) do |k,ov,nv| 
+      
+      puts k
+      puts ov
+      puts nv
+      
+        [ov.first + nv.first,
+         ov.last + nv.last]
+      end
+    end
+    t
   end
 end
