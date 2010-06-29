@@ -1,13 +1,6 @@
 # TODO make thread safe 
 module Utils
   
-  def is_prime?(n)
-    2.upto(Math.sqrt(n)) do |i|
-      return false if n % i == 0
-    end
-    return true
-  end
-
   def euler_sieve(max)
     return [] if max < 2
     nums = Hash.new(true)

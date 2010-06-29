@@ -14,4 +14,11 @@ end
 
 class Integer
   def even? ; self % 2 == 0 end  
+  
+  def is_prime?
+    2.upto(Math.sqrt(self)) do |i|
+      return false if self % i == 0
+    end
+    return true
+  end
 end
