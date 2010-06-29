@@ -11,7 +11,7 @@ class Problem07 < Problem
   def problem(nth = 6,i = 13)
     while nth < 10001
       i += 2
-      nth += 1 if is_prime?(i)
+      nth += 1 if i.is_prime?
     end
     i
   end
