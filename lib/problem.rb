@@ -15,8 +15,6 @@ class Problem
   
   def <=>(o) self.class <=> o.class end
   
-  def even?(n) n % 2 == 0 end
-  
   private
   
   # make a list of all problems that inherit from problem superclass

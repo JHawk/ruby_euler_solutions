@@ -11,3 +11,7 @@ class Array
     end
   end
 end
+
+class Integer
+  def even? ; self % 2 == 0 end  
+end
