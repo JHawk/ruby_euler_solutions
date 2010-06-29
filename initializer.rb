@@ -21,4 +21,6 @@ class Integer
     end
     return true
   end
+  
+  def factorial ; (1..self).inject(:*) end 
 end
