@@ -11,6 +11,12 @@ class Array
     end
   end
   
+  def permutations 
+    a = []
+    self.each_permutation(nil,"") {|p| a << p} 
+    a
+  end
+  
   def sum 
     raise "expected array of Integers" unless self.all? {|i| i.kind_of? Integer}
     self.inject(:+) 
