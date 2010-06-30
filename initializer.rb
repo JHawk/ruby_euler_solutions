@@ -28,4 +28,10 @@ class Integer
   end
   
   def factorial ; (1..self).inject(:*) end 
+  
+  def pandigital?
+    s = self.to_s
+    m = s.split(//).map(&:to_i).max
+    s.size == s.squeeze.size && (1..m).all? {|d| s.count(d.to_s) == 1}
+  end
 end
