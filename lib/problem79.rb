@@ -33,7 +33,10 @@ class Problem79 < Problem
     end
     vals = linked_list.values
     num_s = ""
-    head = linked_list.select {|k,_| !vals.include?(k)}.keys.first
+    ha = linked_list.select {|k,_| !vals.include?(k)}
+    
+    # stupid select method doesn't behave the same
+    head = RUBY_VERSION > "1.9" ? ha.keys.first : ha.first.first  
     while head
       num_s << head
       head = linked_list[head]
