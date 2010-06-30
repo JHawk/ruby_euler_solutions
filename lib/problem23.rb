@@ -8,9 +8,9 @@ class Problem23 < Problem
     super 
   end
 
-  # TODO very slow due to proper_divisors method in utils
+  # TODO very slow due to proper_divisors method
   def problem(n=28123)
-    abunds = Utils::abundants(n)
+    abunds = n.abundants
     abunds.each_with_index do |a,i|
       abunds[(i)..(abunds.length)].each do |j| 
         @sum_two_abunds[a+j] = false
