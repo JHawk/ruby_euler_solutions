@@ -34,4 +34,10 @@ class Integer
     m = s.split(//).map(&:to_i).max
     s.size == s.squeeze.size && (1..m).all? {|d| s.count(d.to_s) == 1}
   end
+
+  def each_permutation(&block) self.to_s.split(//).each_permutation(nil,"",&block) end
+end
+
+class String
+  def each_permutation(&block) self.split(//).each_permutation(nil,"",&block) end
 end
