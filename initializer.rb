@@ -16,6 +16,10 @@ class Array
     self.each_permutation(nil,"") {|p| a << p} 
     a
   end
+   
+  def rotations 
+    [self] + (0..self.size-2).map {|idx| self[idx+1..self.size-1] + self[0..idx]}
+  end
 end
 
 module Enumerable 
@@ -115,4 +119,6 @@ end
 
 class String
   def each_permutation(&block) self.split(//).each_permutation(nil,"",&block) end
+  
+  def rotations self.split(//).rotations.map(&:join) end
 end
