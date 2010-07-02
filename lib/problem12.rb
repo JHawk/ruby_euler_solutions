@@ -8,7 +8,7 @@ class Problem12 < Problem
 
   def initialize
     @pfs = {}
-    @primes = euler_sieve 100000
+    @primes = Utils::euler_sieve 100000
     super 
   end
 
@@ -16,7 +16,7 @@ class Problem12 < Problem
   
   def prime_factors(n)
     return @pfs[n] if @pfs[n]
-    @primes = euler_sieve Math::sqrt(n) if n/2.ceil > @primes.last
+    @primes = Utils::euler_sieve Math::sqrt(n) if n/2.ceil > @primes.last
     @primes.each do |prime|
       if n % prime == 0 
         return @pfs[n] = prime_factors(n / prime).merge({prime => 1}) {|k,o,n| k == 1 ? 1 : o+n}

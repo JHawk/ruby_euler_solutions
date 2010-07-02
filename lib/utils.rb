@@ -1,12 +1,13 @@
 # TODO make thread safe 
 module Utils
   
-  def euler_sieve(max)
+  def self.euler_sieve(max, &block)
     return [] if max < 2
     nums = Hash.new(true)
     (2..Math::sqrt(max).ceil).each do |i|
       if nums[i]
         prime = i
+        yield prime if block
         upto = (max / i) + 1
         while i < upto
           nums[i * prime] = false
@@ -17,7 +18,7 @@ module Utils
     (2..max).inject([]) {|primes,x| nums[x] ? primes << x : primes}
   end
 
-  def eratosthenes_sieve(n)
+  def self.eratosthenes_sieve(n)
     return [] if n < 2
     nums = Hash.new(true)
     even = 4
@@ -41,7 +42,7 @@ module Utils
     primes
   end
 
-  def quad(a,b,c)
+  def self.quad(a,b,c)
     inside = b**2 - (4 * a * c)
     negb = b * -1
     twoa = 2 *a
