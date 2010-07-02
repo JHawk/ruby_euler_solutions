@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/problem.rb'
-require File.dirname(__FILE__) + '/utils.rb'
 
 # Evaluate the sum of all amicable pairs under 10000.
 class Problem21 < Problem
