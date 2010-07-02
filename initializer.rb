@@ -120,5 +120,5 @@ end
 class String
   def each_permutation(&block) self.split(//).each_permutation(nil,"",&block) end
   
-  def rotations self.split(//).rotations.map(&:join) end
+  def rotations ; self.split(//).rotations.map(&:join) end
 end
