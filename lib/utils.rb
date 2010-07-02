@@ -4,7 +4,7 @@ module Utils
   def self.euler_sieve(max, &block)
     return [] if max < 2
     nums = Hash.new(true)
-    (2..Math::sqrt(max).ceil).each do |i|
+    (2..max).each do |i|
       if nums[i]
         prime = i
         yield prime if block
