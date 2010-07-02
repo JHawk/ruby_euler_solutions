@@ -16,7 +16,9 @@ class Array
     self.each_permutation(nil,"") {|p| a << p} 
     a
   end
-  
+end
+
+module Enumerable 
   def sum 
     raise "expected array of Numerics" unless self.all? {|i| i.kind_of? Numeric}
     self.inject(:+) 
