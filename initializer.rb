@@ -18,7 +18,7 @@ class Array
   end
   
   def sum 
-    raise "expected array of Integers" unless self.all? {|i| i.kind_of? Integer}
+    raise "expected array of Numerics" unless self.all? {|i| i.kind_of? Numeric}
     self.inject(:+) 
   end
 end
