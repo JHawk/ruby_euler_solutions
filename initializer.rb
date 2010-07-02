@@ -24,6 +24,24 @@ class Array
 end
 
 class Integer
+
+  def recurring_cycle(i=1)
+    rem_to_idx = {}
+    ps = []
+    idx = 0
+    loop do  
+      q, rem = i.divmod self
+      ps << q
+      return if rem == 0
+      return ps[rem_to_idx[rem]..ps.length].join.to_i if rem_to_idx[rem]
+      i = rem * 10
+      idx += 1
+      # index 0 in the ps array should always be the number before the decimal 
+      # and not needed - no adjust of index necessary 
+      rem_to_idx[rem] = idx 
+    end
+  end
+
   def even? ; self % 2 == 0 end  
   
   def prime?
