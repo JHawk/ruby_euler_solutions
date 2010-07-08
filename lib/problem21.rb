@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
-
 # Evaluate the sum of all amicable pairs under 10000.
 class Problem21 < Problem
   def initialize ; super end

@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Find the only Pythagorean triplet, {a, b, c}, for which a + b + c = 1000.
 class Problem09 < Problem 
   def initialize; super end

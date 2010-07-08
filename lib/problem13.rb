@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Find the first ten digits of the sum of one-hundred 50-digit numbers.
 class Problem13 < Problem
   

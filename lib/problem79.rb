@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
-
 # By analysing a user's login attempts, can you determine the secret numeric passcode?
 
 class Problem79 < Problem

@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # What is the smallest number divisible by each of the numbers 1 to 20?
 class Problem05 < Problem 
   require 'rational'  

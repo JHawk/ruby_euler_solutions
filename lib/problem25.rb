@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
-
 # What is the first term in the Fibonacci sequence to contain 1000 digits?
 class Problem25 < Problem
   def initialize ; super end

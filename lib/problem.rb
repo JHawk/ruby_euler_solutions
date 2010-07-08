@@ -8,6 +8,7 @@ class Problem
   end
   
   def answer
+    puts "calculating #{self.class}..."
     "#{self.class.to_s.ljust(11)}: answer => #{problem.to_s.ljust(15)}: runtime => #{Time.now - self.start}s"
   end
   

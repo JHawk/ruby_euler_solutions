@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Discover the largest product of five consecutive digits in the 1000-digit number.
 class Problem08 < Problem 
 

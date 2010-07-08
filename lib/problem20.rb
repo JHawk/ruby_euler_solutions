@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
-
 # Find the sum of digits in 100!
 class Problem20 < Problem
   

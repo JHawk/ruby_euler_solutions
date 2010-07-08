@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Find the maximum sum travelling from the top of the triangle to the base.
 class Problem18 < Problem
   

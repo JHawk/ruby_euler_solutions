@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # What is the greatest product of four numbers on the same straight line in the 20 by 20 grid?
 class Problem11 < Problem 
   

@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Find the largest prime factor of a composite number.
 class Problem03 < Problem  
   def initialize

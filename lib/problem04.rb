@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Find the largest palindrome made from the product of two 3-digit numbers.
 class Problem04 < Problem
   def initialize; super end

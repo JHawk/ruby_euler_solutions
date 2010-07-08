@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
-
 # What is the largest n-digit pandigital prime that exists?
 
 class Problem41 < Problem

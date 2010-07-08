@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # What is the difference between the sum of the squares and the square of the sums?
 class Problem06 < Problem 
 

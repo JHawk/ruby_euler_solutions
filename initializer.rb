@@ -1,3 +1,6 @@
+# redundant but problem must be required before all problems that inherit from it...
+require File.dirname(__FILE__) + '/lib/problem.rb'
+
 Dir[File.dirname(__FILE__) + '/lib/problem*.rb'].each {|file| require file}
 
 # add methods to classes 

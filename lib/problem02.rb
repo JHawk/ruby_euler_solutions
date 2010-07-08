@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Find the sum of all the even-valued terms in the Fibonacci sequence which do not exceed four million.
 class Problem02 < Problem
   def initialize; super end

@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 require 'time'
 
 # How many Sundays fell on the first of the month during the twentieth century?

@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
 # Calculate the sum of all the primes below two million.
 class Problem10 < Problem 
   def initialize; super end

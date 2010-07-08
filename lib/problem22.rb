@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/problem.rb'
-
 # What is the total of all the name scores in the file of first names?
 class Problem22 < Problem
   def initialize 
