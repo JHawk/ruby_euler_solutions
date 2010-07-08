@@ -9,4 +9,11 @@ class Problem30 < Problem
     # the bound is clearly much lower 
     (2..9**5*7).inject(0) {|sum, i| i == sum_fifths(i) ? sum += i : sum}
   end
+
+=begin 
+  or the incomprehensible one liner
+  (2..9**5*7).inject(0) {|u,i| i==i.to_s.split(//).inject(0) {|s,d| s+=d.to_i**5} ? u+=i : u}
+  also works 
+=end  
+  
 end
