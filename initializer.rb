@@ -23,6 +23,12 @@ class Array
   def rotations 
     [self] + (0..self.size-2).map {|idx| self[idx+1..self.size-1] + self[0..idx]}
   end
+  
+  def palindromic?
+    a = self.clone
+    a.delete_at(a.size/2) unless a.size.even? 
+    a[0..a.size/2-1] == a[a.size/2..a.size-1].reverse
+  end
 end
 
 module Enumerable 
@@ -33,6 +39,7 @@ module Enumerable
 end
 
 class Integer
+  def palindromic? ; self.to_s.palindromic? end
 
   def recurring_cycle(i=1)
     rem_to_idx = {}
@@ -121,6 +128,8 @@ class Integer
 end
 
 class String
+  def palindromic? ; self.split(//).palindromic? end
+
   def each_permutation(&block) self.split(//).each_permutation(nil,"",&block) end
   
   def rotations ; self.split(//).rotations.map(&:join) end
