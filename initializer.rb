@@ -60,7 +60,7 @@ class Integer
     return true
   end
   
-  def factorial ; (1..self).inject(:*) end 
+  def factorial ; self < 1 ? 1 : (1..self).inject(:*) end 
   
   def pandigital?
     s = self.to_s
