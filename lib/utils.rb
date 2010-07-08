@@ -1,6 +1,20 @@
 # TODO make thread safe 
 module Utils
   
+  def self.triangle_numbers(max, &block)
+    nums = []
+    return nums if max < 1
+    n = 1
+    t = 1 
+    while t <= max
+      nums << t
+      yield t if block
+      n += 1
+      t = (n**2 + n)/2
+    end
+    nums
+  end
+  
   def self.euler_sieve(max, &block)
     return [] if max < 2
     nums = Hash.new(true)

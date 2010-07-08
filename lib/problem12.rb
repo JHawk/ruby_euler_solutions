@@ -1,8 +1,6 @@
 require File.dirname(__FILE__) + '/utils.rb'
 # What is the value of the first triangle number to have over five hundred divisors?
 class Problem12 < Problem 
-  include Utils
-
   attr_accessor :pfs
 
   def initialize
