@@ -61,6 +61,7 @@ class Integer
   def even? ; self % 2 == 0 end  
   
   def prime?
+    return false if self <= 1
     2.upto(Math.sqrt(self)) do |i|
       return false if self % i == 0
     end
@@ -114,6 +115,8 @@ class Integer
   def proper_divisors
     (1..(self/2).ceil).inject([]) {|a,i| self % i == 0 ? a << i : a}
   end
+  
+  def prime_divisors ; self.proper_divisors.select(&:prime?) end
     
   @@sum_proper_divisors = {}
     
