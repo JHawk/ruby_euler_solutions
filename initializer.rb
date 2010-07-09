@@ -70,9 +70,10 @@ class Integer
   
   def factorial ; self < 1 ? 1 : (1..self).inject(:*) end 
   
-  def pandigital?
+  def pandigital?(zero=nil)
     arr = self.to_s.split(//).map(&:to_i)
-    arr.size == arr.max && (1..arr.max).all? {|d| arr.count(d) == 1}
+    max = zero ? arr.max + 1 : arr.max 
+    arr.size == max && (zero ? (0..max-1) : (1..max)).all? {|d| arr.count(d) == 1}
   end
 
   def each_permutation(&block) self.to_s.split(//).each_permutation(nil,"",&block) end
@@ -133,6 +134,12 @@ class String
   def palindromic? ; self.split(//).palindromic? end
 
   def each_permutation(&block) self.split(//).each_permutation(nil,"",&block) end
+  
+  def permutations 
+    a = []
+    self.each_permutation {|p| a << p} 
+    a
+  end
   
   def rotations ; self.split(//).rotations.map(&:join) end
 end
