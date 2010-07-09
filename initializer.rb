@@ -70,9 +70,8 @@ class Integer
   def factorial ; self < 1 ? 1 : (1..self).inject(:*) end 
   
   def pandigital?
-    s = self.to_s
-    m = s.split(//).map(&:to_i).max
-    s.size == s.squeeze.size && (1..m).all? {|d| s.count(d.to_s) == 1}
+    arr = self.to_s.split(//).map(&:to_i)
+    arr.size == arr.max && (1..arr.max).all? {|d| arr.count(d) == 1}
   end
 
   def each_permutation(&block) self.to_s.split(//).each_permutation(nil,"",&block) end
