@@ -117,7 +117,23 @@ class Integer
     (1..(self/2).ceil).inject([]) {|a,i| self % i == 0 ? a << i : a}
   end
   
-  def prime_divisors ; self.proper_divisors.select(&:prime?) end
+  # ugly, ugly... UGLY!
+  def prime_divisors  
+    h = {}
+    pds = self.proper_divisors
+    pds.each do |n| 
+      if n.prime?
+        i = 0 
+        c = 0
+        while n < self
+          c += 1
+          i += 1 if pds.include?(n = n**c) 
+        end
+        h[n] = i
+      end
+    end
+    h
+  end
     
   @@sum_proper_divisors = {}
     
