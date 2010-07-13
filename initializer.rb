@@ -78,58 +78,29 @@ class Integer
 
   def each_permutation(&block) self.to_s.split(//).each_permutation(nil,"",&block) end
   
-=begin TODO some day care enough to fix this attempt at a non brute force algo 
-  @@divisors_hash = {}
-
-  def proper_divisors(n)
-    def add_power(set,i,max,p=1)
-      if set.include? i
-        sq = i**p
-        add_power(set,sq,max,p+1) if sq < max && max % sq == 0
-      else 
-        set << i
-      end 
-      set     
-    end 
-    
-    def inner(v,max)
-      
-      ppp v
-    
-      return @@divisors_hash[v] if @@divisors_hash[v]
-      set = [1]
-      (2..(v/2).ceil).each do |i|
-        if v % i == 0 
-          set = inner(v/i,max)
-          set = add_power(set,i,max)
-          set = add_power(set,v/i,max)
-        end
-      end
-      set
-    end
-    
-    @@divisors_hash[n] ? @@divisors_hash[n] : (@@divisors_hash[n] = inner(n,n))
-  end
-=end
-  
   # brute force - probably a better way 
   def proper_divisors
     (1..(self/2).ceil).inject([]) {|a,i| self % i == 0 ? a << i : a}
   end
   
   # ugly, ugly... UGLY!
-  def prime_divisors  
+  def prime_divisors
     h = {}
-    pds = self.proper_divisors
-    pds.each do |n| 
-      if n.prime?
-        i = 0 
-        c = 0
-        while n < self
-          c += 1
-          i += 1 if pds.include?(n = n**c) 
+    (2..(self/2).ceil).each do |n|
+      if self % n == 0 && n.prime?
+        count = 0 
+        power = 0
+        n_raised = n
+        while n_raised < self
+          power += 1
+          n_raised = n**power
+          if self % n_raised == 0
+            count += 1  
+          else
+            break
+          end
         end
-        h[n] = i
+        h[n] = count unless count == 0 
       end
     end
     h
