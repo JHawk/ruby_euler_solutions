@@ -10,7 +10,7 @@ class Problem58 < Problem
     d = side - 1
     corners = [last, last - d, last - d*2, last - d*3]
     diagonal = 5.0
-    Utils::euler_sieve2(700000000) do |prime|
+    Utils::euler_sieve(700000000) do |prime|
       if prime > last
         return side if count / diagonal < dec
         side += 2
