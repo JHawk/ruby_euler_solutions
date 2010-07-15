@@ -14,6 +14,15 @@ class Array
     end
   end
   
+  def each_permutation_true(idx = nil, arr = [], &block)
+    idx ||= (0..(self.size - 1)).to_a
+    if idx.empty?
+      yield arr
+    else  
+      idx.each {|i| each_permutation_true(idx - [i], arr + [self[i]], &block)}
+    end
+  end
+  
   def permutations 
     a = []
     self.each_permutation(nil,"") {|p| a << p} 
@@ -58,7 +67,27 @@ class Integer
     end
   end
 
-  def even? ; self % 2 == 0 end  
+  # approx 
+  def fermat_prime?(t=7)
+    return false if self < 2
+    t.times {return false if self.mod_pow(rand(self-1)+1) > 1}
+    true
+  end
+
+  def mod_pow(n) 
+    result = 1
+    e = self - 1
+    while e > 0
+      result = (result * n) % self if e.odd?
+      e /= 2
+      n = n**2 % self
+    end
+    result
+  end
+
+  def even? ; !self.odd? end 
+  
+  def odd? ; self & 1 == 1 end
   
   def prime?
     return false if self <= 1
