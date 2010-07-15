@@ -14,10 +14,12 @@ module Utils
     end
     nums
   end
-  
+    
   def self.euler_sieve(max, &block)
     return [] if max < 2
-    nums = Hash.new(true)
+    nums = Array.new(max+1,true)
+    nums[0] = false
+    nums[1] = false
     (2..max).each do |i|
       if nums[i]
         prime = i
@@ -29,7 +31,9 @@ module Utils
         end
       end
     end
-    (2..max).inject([]) {|primes,x| nums[x] ? primes << x : primes}
+    primes = []
+    nums.each_with_index {|b,idx| primes << idx if b}
+    primes
   end
 
   def self.eratosthenes_sieve(n)
