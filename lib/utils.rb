@@ -60,10 +60,10 @@ module Utils
     primes
   end
 
-  def self.quad(a,b,c)
+  def self.quadratic(a,b,c)
     inside = b**2 - (4 * a * c)
     negb = b * -1
-    twoa = 2 *a
+    twoa = 2 * a
     ans1 = negb + Math.sqrt(inside) 
     ans2 = negb - Math.sqrt(inside) 
     return (ans1 / twoa), (ans2 / twoa)
