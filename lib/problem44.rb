@@ -10,10 +10,6 @@ class Pentagonal
   
   def <=>(o) @index <=> o.index end
   
-  def to_s ; "#{inspect}" end
-     
-  def inspect ; value end
-  
   def +(o) 
     return value + o.value if o.respond_to?(:value)
     value + o 
@@ -23,23 +19,29 @@ class Pentagonal
     return value - o.value if o.respond_to?(:value)
     value - o
   end
+  
+  def self.pentagonal?(p)
+    Utils::quadratic(1.5,0.5,p*-1).any? do |i| 
+      i == i.to_i && Pentagonal.new(i.abs).value == p
+    end
+  end
 end
    
-# After 40755, what is the next triangle number that is also pentagonal and hexagonal?
+# Find the smallest pair of pentagonal numbers whose sum and difference is pentagonal.
 class Problem44 < Problem 
   def initialize ; super end
 
   def problem
     pentagonals = []
     pent = Pentagonal.new 1
-    pentagonals = [pent] + pentagonals
-    while true
+    loop do
       pentagonals.each do |p|
-        pent - p 
+        if Pentagonal.pentagonal?(pent-p) && Pentagonal.pentagonal?(pent+p)
+          return pent-p 
+        end
       end
-        return 
-        pent = pent.succ
-
+      pentagonals = [pent.value] + pentagonals
+      pent = pent.succ
     end
   end  
 end
