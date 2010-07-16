@@ -157,5 +157,7 @@ class String
     a
   end
   
+  def anagram?(o) ; self.split(//).sort.join == o.split(//).sort.join end
+  
   def rotations ; self.split(//).rotations.map(&:join) end
 end
