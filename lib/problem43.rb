@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/utils.rb'
 # Find the sum of all pandigital numbers with an unusual sub-string divisibility property.
 class Problem43 < Problem 
   def initialize

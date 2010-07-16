@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/utils.rb'
-
 # Find the sum of all numbers that can be written as pandigital products.
 class Problem35 < Problem 
   def initialize; super end

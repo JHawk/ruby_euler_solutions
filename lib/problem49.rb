@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/utils.rb'
 # Find arithmetic sequences, made of prime terms, whose four digits are permutations of each other.
 class Problem49 < Problem 
   def initialize 

@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/utils.rb'
 # Investigate the number of primes that lie on the diagonals of the spiral grid.
 class Problem58 < Problem 
   def initialize ; super end

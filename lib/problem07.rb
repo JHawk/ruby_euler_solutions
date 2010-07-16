@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/utils.rb'
 # Find the 10001st prime.
 
 class Problem07 < Problem 
